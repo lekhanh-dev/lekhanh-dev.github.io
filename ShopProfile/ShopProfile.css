@@ -1,0 +1,324 @@
+body {
+    background-color: antiquewhite;
+}
+
+.page {
+    background-color: #ffffff;
+    margin: 20px auto;
+    box-shadow: 0px 0px 5px 1px #c4c2c2;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(105,103,112,0.31);
+}
+
+.caption .subtitle {
+    color: #999;
+}
+
+.shop-tabs-header {
+    padding: 20px ;
+}
+
+.shop-tabs-header .tabs {
+    border-bottom: 1px solid rgba(105,103,112,0.31);
+    padding-bottom: 3px;
+}
+
+.shop-tabs-header a {
+    color: black;
+    text-decoration: none;
+    padding-bottom: 3px;
+}
+
+.shop-tabs-header .tabs .active {
+    border-bottom: 3px solid tomato;
+}
+
+.shop-tabs-detail {
+    padding: 20px;
+}
+
+.left-card {
+    border: 1px solid rgba(105,103,112,0.1);
+    position: relative;
+    box-shadow: inset 0px -5px 0px 0px #d0c7c7;
+}
+
+.left-card .cover-photo .image {
+    width: 100%;
+}
+
+.left-card .upload-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0,0,0,.27);
+    color: white;
+    border-radius: 1.6rem;
+    padding: 7px 16px;
+}
+
+.left-card .upload-image .input-file {
+    display: none;
+}
+
+.left-card .upload-image label {
+    margin: 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.left-card .upload-image:hover {
+    background-color: rgba(17, 16, 16, 0.8);
+    cursor: pointer;
+}
+
+.profile-container {
+    transform: translateY(-60px);
+    border-bottom: 1px solid rgba(105,103,112,0.1);
+    height: 120px;
+}
+
+.profile-container .avatar-container {
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+    height: 100%;
+    border-radius: 50%;
+    margin: 0 20px;
+    border: 2px solid white;
+    float: left;
+}
+
+.profile-container .avatar-container .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.profile-container .avatar-container .upload-file {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-container .avatar-container .upload-file input {
+    display: none;
+}
+
+.profile-container .avatar-container .upload-file .tip {
+    background-color: rgba(0,0,0,.27);
+    color: rgb(211, 201, 201);
+    position: absolute;
+    bottom: 0px;
+    margin: auto;
+    display: block;
+    padding: 0.2rem;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+}
+
+.profile-container .avatar-container .upload-file .tip:hover {
+    background-color: rgba(0,0,0,.6);
+}
+
+.profile-container .seller-name {
+    float: left;
+    color: white;
+}
+
+.profile-container .seller-name .name {
+    font-size: 1.4rem;
+}
+
+.profile-container .seller-name .description {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.profile-container .seller-name .follow, .followed {
+    color: black;
+    font-size: 0.8rem;
+    float: left;
+    margin-right: 10px;
+}
+
+.left-card .rating-fields {
+    transform: translateY(-60px);
+}
+
+.left-card .rating-fields .field {
+    padding: 13px 15px;
+    border-bottom: 1px solid rgba(105,103,112,0.1);
+    font-size: 15px;
+    color: #989595;
+    position: relative;
+}
+
+.left-card .rating-fields .field .right {
+    position: absolute;
+    right: 20px;
+    color: tomato ;
+}
+
+.left-card .rating-fields .view-shop .right i{
+    color: #989595;
+    border: 1px solid rgba(105,103,112,0.1);
+    font-size: 10px;
+    padding: 4px;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+}
+
+.left-card .rating-fields .product .right a {
+    color: tomato;
+    text-decoration: none;
+}
+
+.right-card .label {
+    margin-bottom: 10px;
+    color: rgba(105,103,112,1);
+}
+
+.right-card .label i {
+    font-size: 14px;
+}
+
+.right-card .input {
+    width: 100%;
+    padding: 0 22px;
+    color: rgba(105,103,112, 1);;
+}
+
+.right-card input, textarea {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(105,103,112,0.2);
+    width: 100%;
+    margin-bottom: 15px;
+    color: rgba(105,103,112, 1);
+    height: 2.4rem;
+    outline: none;
+}
+
+.right-card input:hover, textarea:hover {
+    border: 1px solid rgba(105,103,112,0.4);
+}
+
+.right-card textarea {
+    width: 100%;
+}
+
+.right-card .upload-image-description input {
+    display: none;
+    color: rgba(105,103,112,1);
+}
+
+.right-card .btn-save {
+    text-align: center;
+}
+
+.right-card .btn-save button {
+    background-color: tomato;
+    padding: 5px 20px;
+}
+
+.right-card .btn-save button:hover {
+    background-color: rgb(245, 133, 114);
+}
+
+.right-card .input .tip .left {
+    width: 60%;
+    float: left;
+}
+
+.right-card .input .tip .right {
+    width: 30%;
+    float: right;
+    text-align: right;
+}
+
+.right-card .input .tip .clear {
+    clear: both;
+    display: flex;
+    padding-top: 20px;
+}
+
+.upload-image-description .upload-image {
+    margin-bottom: 45px;
+}
+
+.upload-image-description .upload-image .col-6 {
+    height: 110px;
+}
+
+.upload-image-description .upload-image .upload {
+    background-color: #fafafa;
+}
+
+.upload-image-description .upload-image .upload .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 13px;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+
+}
+
+.upload-image-description .upload-image .upload .right {
+    width: 50%;
+}
+
+.upload-image-description .upload-image .upload label i {
+    font-size: 2rem;
+}
+
+.upload-image-description .upload-image .upload label p {
+    margin-bottom: 0;
+}
+
+.upload-image-description .upload-image .col-6 {
+    text-align: center;
+}
+
+.upload-image-description .upload-image .col-6 .image {
+    border: 1px solid rgba(105,103,112,0.31);
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.upload-image-description .upload-image .col-6 .image .icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    background: #d87575;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+    
+.upload-image-description .upload-image img {
+    width: 50%;
+    height: 100%;
+}
+
+.upload-image-description .upload-image .col-6 .upload {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
