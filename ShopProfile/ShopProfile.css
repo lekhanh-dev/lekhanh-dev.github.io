@@ -13,8 +13,20 @@ body {
     border-bottom: 1px solid rgba(105,103,112,0.31);
 }
 
-.caption .subtitle {
+.header .icon {
+    float: left;
+    margin-right: 20px;
+    width: 64px;
+    height: 64px;
+}
+
+.header .title {
+    float: left;
+}
+
+.header .title p {
     color: #999;
+    margin-bottom: 0;
 }
 
 .shop-tabs-header {
@@ -319,6 +331,41 @@ body {
     height: 100%;
 }
 
+@media screen and (max-width: 991px) {
+    .right-card {
+        margin-top: 40px;
+    }
+  }
 
+@media screen and (max-width: 575px) {
+    .header .icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .header .icon img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .header .title p {
+        display: none;
+    }
+
+    .header .title h3 {
+        margin-bottom: 0;
+    }
+
+    .upload-image-description .upload-image .col-6 .image .icon {
+        width: 30px;
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .upload-image-description .upload-image img {
+        width: auto;
+    }
+    
+}
 
 
