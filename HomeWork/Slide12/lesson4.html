@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 12 - Lesson 4</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .header {
+        height: 50px;
+        background-color: chartreuse;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+      .header .item {
+        width: 90px;
+        height: 30px;
+        background-color: rgb(51, 51, 238);
+      }
+      .content {
+        background-color: pink;
+        display: flex;
+        padding: 0 5px;
+      }
+      .content .item {
+        flex: 50%;
+        background-color: rgb(51, 51, 238);
+        height: 500px;
+        margin: 0 5px;
+      }
+      @media screen and (max-width: 768px) {
+        .header {
+          background-color: pink;
+        }
+        .header .item {
+          width: 60px;
+        }
+        .content {
+          flex-wrap: wrap;
+          padding: 0 10px;
+        }
+        .content .item {
+          flex: 100%;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+      <div class="content">
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+  </body>
+</html>
