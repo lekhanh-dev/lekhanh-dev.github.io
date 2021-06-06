@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        padding: 30px;
+      }
+      .tab-nav {
+        display: flex;
+        list-style: none;
+        border-bottom: 1px solid rgb(121, 121, 121);
+        padding-left: 0;
+      }
+      .tab-nav .tab-button {
+        padding: 20px;
+        margin-bottom: -1px;
+        cursor: pointer;
+        color: rgb(101, 101, 255);
+        transition: all 0.3s ease-out;
+        border: 1px solid;
+        border-color: #fff #fff rgb(121, 121, 121);
+      }
+      .tab-button.active {
+        cursor: auto;
+        color: black;
+        border-color: rgb(121, 121, 121) rgb(121, 121, 121) #fff;
+      }
+      .tab-content {
+        display: none;
+        animation: fadeEffect 1s;
+      }
+      .tab-content:nth-child(1) {
+        display: block;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tab</h1>
+      <div class="tab-wrap">
+        <ul class="tab-nav">
+          <li class="tab-button active" onclick="openTab(event, 'Home')">
+            Home
+          </li>
+          <li class="tab-button" onclick="openTab(event, 'Profile')">
+            Profile
+          </li>
+          <li class="tab-button" onclick="openTab(event, 'Contact')">
+            Contact
+          </li>
+        </ul>
+        <div class="tab-body">
+          <div class="tab-content" id="Home">
+            <h2>Home</h2>
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+            <img
+              src="https://images.pexels.com/photos/5282269/pexels-photo-5282269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              alt="image"
+            />
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+          </div>
+          <div class="tab-content" id="Profile">
+            <h2>Profile</h2>
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+            <img
+              src="https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="image"
+            />
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+          </div>
+          <div class="tab-content" id="Contact">
+            <h2>Contact</h2>
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+            <img
+              src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="image"
+            />
+            <p>
+              This is some placeholder content the Contact tab's associated
+              content. Clicking another tab will toggle the visibility of this
+              one for the next. The tab JavaScript swaps classes to control the
+              content visibility and styling. You can use it with tabs, pills,
+              and any other .nav-powered navigation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function openTab(event, tabName) {
+      let i, tabContents, tabButtons;
+      tabContents = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = "none";
+      }
+      tabButtons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].className = tabButtons[i].className.replace(
+          " active",
+          ""
+        );
+      }
+      document.getElementById(tabName).style.display = "block";
+      event.currentTarget.className += " active";
+    }
+  </script>
+</html>

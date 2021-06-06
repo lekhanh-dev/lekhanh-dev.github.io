@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toasts</title>
+    <style>
+      body {
+        margin: 0;
+        position: relative;
+        background-color: rgb(238, 237, 237);
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .container button {
+        cursor: pointer;
+        outline: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(54, 54, 255);
+        color: white;
+        font-size: 20px;
+        transition: all 0.2s ease-out;
+      }
+      .container button:hover {
+        opacity: 0.8;
+      }
+      .toasts-wrap {
+        width: 300px;
+        background-color: white;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        box-shadow: 0px 0px 8px #a9a9a9;
+        border-radius: 5px;
+        animation: fadeEffect 0.5s;
+        display: none;
+      }
+      .toasts-head {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .toasts-body {
+        background-color: rgb(228, 228, 228);
+        padding: 20px 10px;
+      }
+      .toasts-time {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+      }
+      .btn-close {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        background: white;
+        transition: all 0.2s ease-out;
+        margin-left: 10px;
+        font-size: 16px;
+      }
+      .btn-close:hover {
+        background: rgb(237, 237, 237);
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toasts-wrap">
+      <div class="toasts-head">
+        <div class="toasts-title">Alert</div>
+        <div class="toasts-time">
+          10 seconds ago
+          <button onclick="closeToasts()" class="btn-close">X</button>
+        </div>
+      </div>
+      <div class="toasts-body">The box will hide after 10 seconds</div>
+    </div>
+    <div class="container">
+      <button onclick="openToasts()">Open toasts</button>
+    </div>
+  </body>
+  <script>
+    let interval;
+    function openToasts() {
+      let toasts = document.querySelector(".toasts-wrap");
+      let toastsBody = document.querySelector(".toasts-body");
+      let count = 10;
+      toastsBody.innerHTML = `The box will hide after 10 seconds`;
+      clearInterval(interval);
+      toasts.style.display = "none";
+      setTimeout(() => {
+        toasts.style.display = "block";
+      }, 200);
+      interval = setInterval(() => {
+        count--;
+        toastsBody.innerHTML = `The box will hide after ${count} seconds`;
+        if (count === 0) {
+          toasts.style.display = "none";
+          clearInterval(interval);
+          toastsBody.innerHTML = `The box will hide after 10 seconds`;
+        }
+      }, 1000);
+    }
+    function closeToasts() {
+      let toasts = document.querySelector(".toasts-wrap");
+      let toastsBody = document.querySelector(".toasts-body");
+      toasts.style.display = "none";
+      clearInterval(interval);
+      toastsBody.innerHTML = `The box will hide after 10 seconds`;
+    }
+  </script>
+</html>

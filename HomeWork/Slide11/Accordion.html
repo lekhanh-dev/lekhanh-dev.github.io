@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .container {
+        padding: 30px;
+      }
+      .accordion-btn {
+        cursor: pointer;
+        outline: none;
+        width: 100%;
+        text-align: left;
+        padding: 20px;
+        border-radius: 0;
+        border: 1px solid rgb(141, 141, 141);
+        color: rgb(106, 106, 255);
+        font-size: 20px;
+      }
+      .active {
+        background-color: rgb(184, 184, 253);
+      }
+      .accordion-body {
+        padding: 0 20px;
+        border-left: 1px solid rgb(141, 141, 141);
+        border-right: 1px solid rgb(141, 141, 141);
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.2s ease-out;
+      }
+      .accordion-item:nth-child(3) .accordion-body {
+        border-bottom: 1px solid rgb(141, 141, 141);
+      }
+      .accordion-btn:after {
+        content: "\02795";
+        font-size: 13px;
+        color: rgb(106, 106, 255);
+        float: right;
+        margin-left: 5px;
+      }
+      .active:after {
+        content: "\2796";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Accordion</h1>
+      <div class="accordion-wrap">
+        <div class="accordion-item">
+          <button class="accordion-btn">Accordion item 1</button>
+          <div class="accordion-body">
+            <b>This is the first item's accordion body.</b> It is shown by
+            default, until the collapse plugin adds the appropriate classes that
+            we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions.
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the .accordion-body, though the transition does limit
+            overflow.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">Accordion item 2</button>
+          <div class="accordion-body" id="kk">
+            <b>This is the second item's accordion body.</b> It is shown by
+            default, until the collapse plugin adds the appropriate classes that
+            we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions.
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the .accordion-body, though the transition does limit
+            overflow.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-btn">Accordion item 3</button>
+          <div class="accordion-body">
+            <b>This is the third item's accordion body.</b> It is shown by
+            default, until the collapse plugin adds the appropriate classes that
+            we use to style each element. These classes control the overall
+            appearance, as well as the showing and hiding via CSS transitions.
+            You can modify any of this with custom CSS or overriding our default
+            variables. It's also worth noting that just about any HTML can go
+            within the .accordion-body, though the transition does limit
+            overflow.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let acc = document.getElementsByClassName("accordion-btn");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+          panel.style.paddingTop = "0";
+          panel.style.paddingBottom = "0";
+        } else {
+          panel.style.paddingTop = "20px";
+          panel.style.paddingBottom = "20px";
+          panel.style.maxHeight = panel.scrollHeight + "px";
+          for (let j = 0; j < acc.length; j++) {
+            if (this !== acc[j]) {
+              acc[j].classList.toggle("active", false);
+              acc[j].nextElementSibling.style.maxHeight = null;
+              acc[j].nextElementSibling.style.paddingTop = "0";
+              acc[j].nextElementSibling.style.paddingBottom = "0";
+            }
+          }
+        }
+      });
+    }
+  </script>
+</html>
